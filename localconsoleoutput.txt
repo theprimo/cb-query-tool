@@ -1,0 +1,48 @@
+
+D:\tools\cbquerytool>java -jar CBQueryTool.jar
+Given configuration ...
+CBUSER: Administrator
+CBPASSWORD: password
+CBBUCKETNAME: data
+CBCLUSTERNODE: 127.0.0.1
+CSVOUTPUTFIELDS: code,id,status,type_
+N1QLQuery: SELECT code,id,status,type_ FROM `data` where type_='Agent' and code in ['60000135','60000137','60001064'];
+Connecting to Couchbase DB ...
+Nov 30, 2019 10:26:29 PM com.couchbase.client.core.CouchbaseCore <init>
+INFO: CouchbaseEnvironment: {sslEnabled=false, sslKeystoreFile='null', sslKeystorePassword=false, sslKeystore=null, bootstrapHttpEnabled=true, bootstrapCarrierEnabled=true, bootstrapHttpDirectPort=8091, bootstrapHttpSslPort=18091, bootstrapCarrierDirectPort=11210, bootstrapCarrierSslPort=11207, ioPoolSize=4, computationPoolSize=4, responseBufferSize=16384, requestBufferSize=16384, kvServiceEndpoints=1, viewServiceEndpoints=12, queryServiceEndpoints=12, searchServiceEndpoints=12, configPollInterval=2500, ioPool=NioEventLoopGroup, kvIoPool=null, viewIoPool=null, searchIoPool=null, queryIoPool=null, coreScheduler=CoreScheduler, memcachedHashingStrategy=DefaultMemcachedHashingStrategy, eventBus=DefaultEventBus, packageNameAndVersion=couchbase-java-client/2.5.0 (git: 2.5.0, core: 1.5.0), retryStrategy=BestEffort, maxRequestLifetime=75000, retryDelay=ExponentialDelay{growBy 1.0 MICROSECONDS, powers of 2; lower=100, upper=100000}, reconnectDelay=ExponentialDelay{growBy 1.0 MILLISECONDS, powers of 2; lower=32, upper=4096}, observeIntervalDelay=ExponentialDelay{growBy 1.0 MICROSECONDS, powers of 2; lower=10, upper=100000}, keepAliveInterval=30000, continuousKeepAliveEnabled=true, keepAliveErrorThreshold=4, keepAliveTimeout=2500, autoreleaseAfter=2000, bufferPoolingEnabled=true, tcpNodelayEnabled=true, mutationTokensEnabled=false, socketConnectTimeout=1000, callbacksOnIoPool=false, disconnectTimeout=25000, requestBufferWaitStrategy=com.couchbase.client.core.env.DefaultCoreEnvironment$2@b7dd107, certAuthEnabled=false, coreSendHook=null, queryTimeout=75000, viewTimeout=75000, searchTimeout=75000, analyticsTimeout=75000, kvTimeout=2500, connectTimeout=5000, dnsSrvEnabled=false}
+Nov 30, 2019 10:26:30 PM com.couchbase.client.core.node.CouchbaseNode signalConnected
+INFO: Connected to Node 127.0.0.1/kubernetes.docker.internal
+Nov 30, 2019 10:26:30 PM com.couchbase.client.core.config.DefaultConfigurationProvider$8 call
+INFO: Opened bucket data
+Executing the query ...
+Writing the output to ResultCsv.csv file ...
+Processing is completed
+Total time taken: 3300ms
+Nov 30, 2019 10:26:31 PM com.couchbase.client.core.endpoint.AbstractEndpoint notifyChannelInactive
+INFO: [kubernetes.docker.internal/127.0.0.1:8093][QueryEndpoint]: Got notified from Channel as inactive, attempting reconnect.
+Nov 30, 2019 10:26:31 PM com.couchbase.client.core.config.DefaultConfigurationProvider$11 call
+INFO: Closed bucket data
+Nov 30, 2019 10:26:31 PM com.couchbase.client.core.node.CouchbaseNode signalDisconnected
+INFO: Disconnected from Node 127.0.0.1/kubernetes.docker.internal
+Nov 30, 2019 10:26:31 PM com.couchbase.client.core.endpoint.AbstractEndpoint notifyChannelInactive
+INFO: [null][KeyValueEndpoint]: Got notified from Channel as inactive, attempting reconnect.
+Nov 30, 2019 10:26:31 PM com.couchbase.client.core.env.DefaultCoreEnvironment$6 call
+INFO: Shutdown kvIoPool: success
+Nov 30, 2019 10:26:31 PM com.couchbase.client.core.env.DefaultCoreEnvironment$6 call
+INFO: Shutdown viewIoPool: success
+Nov 30, 2019 10:26:31 PM com.couchbase.client.core.env.DefaultCoreEnvironment$6 call
+INFO: Shutdown queryIoPool: success
+Nov 30, 2019 10:26:31 PM com.couchbase.client.core.env.DefaultCoreEnvironment$6 call
+INFO: Shutdown searchIoPool: success
+Nov 30, 2019 10:26:31 PM com.couchbase.client.core.env.DefaultCoreEnvironment$6 call
+INFO: Shutdown Core Scheduler: success
+Nov 30, 2019 10:26:31 PM com.couchbase.client.core.env.DefaultCoreEnvironment$6 call
+INFO: Shutdown Runtime Metrics Collector: success
+Nov 30, 2019 10:26:31 PM com.couchbase.client.core.env.DefaultCoreEnvironment$6 call
+INFO: Shutdown Latency Metrics Collector: success
+Nov 30, 2019 10:26:31 PM com.couchbase.client.core.env.DefaultCoreEnvironment$6 call
+INFO: Shutdown IoPool: success
+Nov 30, 2019 10:26:32 PM com.couchbase.client.core.env.DefaultCoreEnvironment$6 call
+INFO: Shutdown Netty: success
+
+D:\tools\cbquerytool>
